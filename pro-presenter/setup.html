@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ProPresenter Setup | Media & Production Team</title><link rel="stylesheet" href="../styles.css">
+<style>
+.flow{display:grid;gap:10px;margin:12px 0}.flowline{display:flex;align-items:center;gap:9px;flex-wrap:wrap;padding:12px 14px;background:#12171b;border:1px solid var(--line);border-radius:11px}.node{padding:8px 10px;border:1px solid #52606b;border-radius:9px;background:#0d1114;font-weight:700}.arrowflow{color:var(--blue);font-size:19px;font-weight:900}.tag{font-size:12px;color:var(--muted);font-weight:600}.always{border-color:#385c42;background:#142019}.note{color:var(--muted);font-size:14px;line-height:1.5}.signal-title{font-size:14px;font-weight:800;margin:18px 0 8px;color:#dbe2e7}@media(max-width:700px){.flowline{align-items:stretch}.arrowflow{align-self:center}}
+</style>
+</head><body><main class="wrap">
+<div class="breadcrumb"><a href="../">Media & Production Team</a><span>›</span><a href="./">ProPresenter</a><span>›</span><span>Setup</span></div>
+<section class="pagehead"><div class="eyebrow">Service-Day Checklist</div><h1>ProPresenter Setup</h1>
+<p>Connect and verify the Mac mini display outputs before rehearsal. The normal desk monitor HDMI stays connected.</p></section>
+
+<div class="checklist">
+<section class="step"><h2>1. Booth Monitor</h2><div class="items">
+<div class="item"><span class="box"></span><span>Verify the normal monitor is connected directly to the Mac mini's built-in HDMI port.</span></div>
+<div class="callout"><b>Leave this HDMI connected.</b> This is the normal ProPresenter operator monitor.</div>
+</div></section>
+
+<section class="step"><h2>2. Connect Stream Output</h2><div class="items">
+<div class="item"><span class="box"></span><span>Connect the HDMI cable for the ATEM Mini stream output to the HDMI → USB-C adapter.</span></div>
+<div class="item"><span class="box"></span><span>Connect the adapter to the Mac mini.</span></div>
+</div></section>
+
+<section class="step"><h2>3. Connect Confidence TV</h2><div class="items">
+<div class="item"><span class="box"></span><span>Connect the HDMI cable for the confidence TV in the back to the HDMI → USB-A adapter.</span></div>
+<div class="item"><span class="box"></span><span>Connect the adapter to the Mac mini.</span></div>
+</div></section>
+
+<section class="step"><h2>4. Connect Main Projector</h2><div class="items">
+<div class="item"><span class="box"></span><span>Connect the projector output from the Mac mini USB-C connection to the Blackmagic converter.</span></div>
+<div class="item"><span class="box"></span><span>Verify SDI is connected from the booth-side Blackmagic converter to the projector-side Blackmagic converter.</span></div>
+<div class="item"><span class="box"></span><span>At the projector, verify the second Blackmagic converter changes the SDI signal back to HDMI and feeds the projector.</span></div>
+</div></section>
+
+<section class="step"><h2>5. Verify All Displays</h2><div class="items">
+<div class="item"><span class="box"></span><span>Booth / operator monitor is visible.</span></div>
+<div class="item"><span class="box"></span><span>ATEM Mini stream feed is receiving the ProPresenter output.</span></div>
+<div class="item"><span class="box"></span><span>Confidence TV in the back is receiving signal.</span></div>
+<div class="item"><span class="box"></span><span>Main projector is receiving signal.</span></div>
+<div class="callout"><b>DISPLAY CONNECTIONS READY</b></div>
+</div></section>
+</div>
+
+<div class="section-title">Signal Flow Reference</div>
+<div class="flow">
+<div class="flowline always"><span class="node">Mac mini M1 HDMI</span><span class="arrowflow">→</span><span class="node">Booth Monitor</span><span class="tag">STAYS CONNECTED</span></div>
+<div class="flowline"><span class="node">Mac mini</span><span class="arrowflow">→</span><span class="node">HDMI → USB-C Adapter</span><span class="arrowflow">→</span><span class="node">HDMI</span><span class="arrowflow">→</span><span class="node">ATEM Mini Stream</span></div>
+<div class="flowline"><span class="node">Mac mini</span><span class="arrowflow">→</span><span class="node">HDMI → USB-A Adapter</span><span class="arrowflow">→</span><span class="node">HDMI</span><span class="arrowflow">→</span><span class="node">Confidence TV</span></div>
+<div class="flowline"><span class="node">Mac mini USB-C</span><span class="arrowflow">→</span><span class="node">Blackmagic Converter</span><span class="arrowflow">→</span><span class="node">SDI</span><span class="arrowflow">→</span><span class="node">Blackmagic Converter</span><span class="arrowflow">→</span><span class="node">HDMI</span><span class="arrowflow">→</span><span class="node">Main Projector</span></div>
+</div>
+<p class="note">This page documents the physical display connections only. ProPresenter screen assignments and output names can be added separately once they are confirmed on the Mac.</p>
+<div class="footer"><a href="./">← Back to ProPresenter</a></div>
+</main></body></html>
