@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sound Guide</title><link rel="stylesheet" href="../styles.css">
+<style>
+.viewer-shell{margin-top:20px}
+.guide-frame{display:block;width:100%;border:0;margin:0 auto;background:#0d1013;border-radius:14px;overflow:hidden}
+.viewer-note{color:var(--muted);font-size:13px;margin:8px 0 14px;text-align:center}
+@media(max-width:700px){.wrap{padding-left:10px;padding-right:10px}.guide-frame{border-radius:9px}}
+</style>
+</head>
+<body><main class="wrap">
+<div class="breadcrumb"><a href="../">Media & Production Team</a><span>›</span><a href="./">Sound</a><span>›</span><a href="reference.html">Reference</a><span>›</span><span id="crumb">Guide</span></div>
+<section class="pagehead"><div class="eyebrow">Sound Reference</div><h1 id="title">Equipment Guide</h1><p id="desc">Visual connection reference.</p></section>
+<div class="viewer-shell"><div class="viewer-note">Displayed at its intended size for better clarity. On phones it automatically scales down to fit the screen.</div><iframe id="frame" class="guide-frame" title="Sound equipment guide"></iframe></div>
+<div class="footer"><a href="reference.html">← Back to Connection & Equipment Reference</a></div>
+</main>
+<script>
+const guides={
+ 'piano-bass':{title:'Piano & Bass',desc:'Instrument and DI connection reference.',src:'guides/piano-bass.html',max:900,ratio:600/900},
+ 'p1':{title:'Instrument IEM — Behringer P1',desc:'Wired instrument IEM connection reference.',src:'guides/behringer-p1.html',max:900,ratio:600/900},
+ 'xvive':{title:'Singer IEM — Xvive U4',desc:'Wireless singer IEM quick reference.',src:'guides/xvive-u4.html',max:900,ratio:675/900},
+ 'pa':{title:'EV PA System',desc:'Main speakers, subwoofers, monitors, and PA routing reference.',src:'guides/ev-pa-system.html',max:1120,ratio:0.75}
+};
+const key=new URLSearchParams(location.search).get('guide')||'piano-bass';
+const g=guides[key]||guides['piano-bass'];
+document.title=g.title+' | Sound Reference';
+document.getElementById('title').textContent=g.title;
+document.getElementById('crumb').textContent=g.title;
+document.getElementById('desc').textContent=g.desc;
+const frame=document.getElementById('frame');
+frame.style.maxWidth=g.max+'px';
+frame.style.height=Math.round(Math.min(window.innerWidth-20,g.max)*g.ratio)+'px';
+frame.src=g.src;
+frame.addEventListener('load',()=>{
+ try{
+  const h=frame.contentDocument.documentElement.scrollHeight||frame.contentDocument.body.scrollHeight;
+  if(h>100) frame.style.height=h+'px';
+ }catch(e){}
+});
+</script></body></html>
